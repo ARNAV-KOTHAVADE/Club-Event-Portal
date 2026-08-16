@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Form.css"; 
 import app from "./Firebase";
 import { getAuth , createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./Firebase";   // reuse the one from Firebase.jsx
 
 
 function Signup(){
@@ -11,7 +12,7 @@ function Signup(){
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  let auth = getAuth();
+  //let auth = getAuth();
   let nav = useNavigate();
 
   let handleSubmit = (event) => 

@@ -3,13 +3,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";  
 import "./Form.css"; 
 import { getAuth , signInWithEmailAndPassword } from "firebase/auth";
-
+import { auth } from "./Firebase";   // reuse the one from Firebase.jsx
 
 function Login(){
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  let auth = getAuth();
+  //let auth = getAuth();
   let nav = useNavigate();
   
   let handleSubmit = (event)=>

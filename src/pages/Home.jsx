@@ -2,10 +2,12 @@
 import { useNavigate } from "react-router-dom";
 import "./Form.css"; 
 import { getAuth , signOut } from "firebase/auth";
+import { auth } from "./Firebase";   // reuse the one from Firebase.jsx
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Home(){
  
-  let auth = getAuth();
+  //let auth = getAuth();
   let nav = useNavigate();
 
   let handleClick = ()=>
@@ -22,7 +24,7 @@ function Home(){
     <div className="container">
       <div className="form-box">
         <h2>Welcome to Your Dashboard</h2>
-        <p>You are successfully</p>
+        <p>You are successfully logged in!</p>
 
         <div className="button-group">
           <button  style={{ backgroundColor: "#777" }}>
