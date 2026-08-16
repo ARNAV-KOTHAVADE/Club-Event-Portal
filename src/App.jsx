@@ -8,7 +8,6 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import ForgotPassword from './pages/ForgotPassword'
 import ChangePassword from './pages/ChangePassword'
-import { ProtectedRoute } from "./components/ProtectedRoute";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import Admin from "./pages/Admin";
