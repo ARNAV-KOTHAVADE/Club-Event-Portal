@@ -10,6 +10,9 @@ import ForgotPassword from './pages/ForgotPassword'
 import ChangePassword from './pages/ChangePassword'
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
+import Admin from "./pages/Admin";
+import { ProtectedRoute, AdminRoute } from "./components/ProtectedRoute";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,12 +28,21 @@ function App() {
             <Route path='/change' element={<ChangePassword/>}/>
             <Route path='/forgot' element={<ForgotPassword/>}/>    
             <Route path="/home" element={
-      <ProtectedRoute>
-        <Home />
-      </ProtectedRoute>
-    } />
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          } />
 
-    <Route path="/events" element={<Events />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/events/:id" element={<EventDetail />} />
+            <Route
+              path="/admin"
+              element={
+                <AdminRoute>
+                  <Admin />
+                </AdminRoute>
+              }
+            />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

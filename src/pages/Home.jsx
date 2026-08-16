@@ -27,6 +27,10 @@ function Home(){
         <p>You are successfully logged in!</p>
 
         <div className="button-group">
+          <button onClick={() => nav("/events")} style={{ backgroundColor: "#28a745" }}>
+            View Events
+          </button>
+          
           <button  style={{ backgroundColor: "#777" }}>
             Change Password
           </button>
